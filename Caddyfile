@@ -1,0 +1,8 @@
+# Set ROOMSHIFT_DOMAIN in the Caddy process environment to your real DNS hostname.
+# Caddy obtains a publicly trusted TLS certificate and proxies WebSocket upgrades.
+{$ROOMSHIFT_DOMAIN} {
+    request_body {
+        max_size 9MB
+    }
+    reverse_proxy 127.0.0.1:3000
+}
